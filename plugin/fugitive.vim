@@ -1129,7 +1129,7 @@ function! s:Blame(bang,line1,line2,count) abort
       call s:throw('file or blob required')
     endif
     let git_dir = s:repo().dir()
-    let cmd = ['--no-pager', 'blame', '--show-number']
+    let cmd = ['--no-pager', 'blame', '--show-number', '-w']
     if s:buffer().commit() =~# '\D\|..'
       let cmd += [s:buffer().commit()]
     else
